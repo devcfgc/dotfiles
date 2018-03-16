@@ -12,6 +12,7 @@ Host *
         # instead of always opening a new one. This leads to much
         # quicker connection times.
         ControlMaster auto
+        # You need to create the dir ~/.ssh/control if it doesn't exists
         ControlPath ~/.ssh/control/%r@%h:%p
         ControlPersist 1800
 
