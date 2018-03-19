@@ -16,6 +16,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# PATHS
+alias cdco="cd $HOME/Documents/code"
+alias cdpu="cd $HOME/Documents/code/puppet"
+
 # IDE
 alias coi='code-insiders .'
 
@@ -23,6 +27,11 @@ alias coi='code-insiders .'
 alias vu='vagrant up'
 alias vs='vagrant ssh'
 alias vd='vagrant destroy -f'
+
+# DOCKER
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias di="docker inspect"
 
 # KUBERNETES
 ## MINIKUBE
@@ -33,11 +42,8 @@ alias mkst="minikube status"
 alias mkssh="minikube ssh"
 alias mkd="minikube delete"
 
-# PATHS
-alias cdco="cd $HOME/Documents/code"
-alias cdpu="cd $HOME/Documents/code/puppet"
-
-# DOCKER
-alias dps="docker ps"
-alias dpsa="docker ps -a"
-alias di="docker inspect"
+## KUBECTL
+alias kga="kubectl get all"
+alias kgp="kubectl get pods"
+alias kgd="kubectl get deployments"
+alias kgs="kubectl get services"
