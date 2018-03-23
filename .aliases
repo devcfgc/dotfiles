@@ -40,7 +40,8 @@ alias mks="minikube start"
 alias mksto="minikube stop"
 alias mkst="minikube status"
 alias mkssh="minikube ssh"
-alias mkd="minikube delete"
+alias mkde="minikube delete"
+alias mkda="minikube dashboard"
 
 ## KUBECTL
 alias kga="kubectl get all"
