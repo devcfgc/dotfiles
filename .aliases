@@ -36,6 +36,7 @@ alias di="docker inspect"
 # KUBERNETES
 ## MINIKUBE
 alias mksv="minikube start --vm-driver=virtualbox"
+alias mksvcr="minikube start --vm-driver=virtualbox --container-runtime=cri-o"
 alias mks="minikube start"
 alias mksto="minikube stop"
 alias mkst="minikube status"
@@ -49,3 +50,4 @@ alias kgp="kubectl get pods"
 alias kgd="kubectl get deployments"
 alias kgs="kubectl get services"
 alias kgr="kubectl get replicasets"
+alias kgn="kubectl get nodes"
