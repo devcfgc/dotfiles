@@ -45,6 +45,7 @@ alias mkde="minikube delete"
 alias mkda="minikube dashboard"
 
 ## KUBECTL
+alias k="kubectl"
 alias kga="kubectl get all"
 alias kgp="kubectl get pods"
 alias kgd="kubectl get deployments"
