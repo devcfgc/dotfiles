@@ -2,11 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/devcfgc/.oh-my-zsh
+export ZSH=/home/devcfgc/.oh-my-zsh
 
-ZSH_THEME="pygmalion"
+# ZSH_THEME="pygmalion"
+# ZSH_THEME="af-magic"
+ZSH_THEME="agnoster"
 
-plugins=(git vagrant docker gem bundler rake ruby git-extras rvm)
+plugins=(
+    bundler
+    docker
+    gem
+    git
+    git-extras
+    golang
+    kubectl
+    rake
+    ruby
+    rvm
+    vagrant
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,8 +34,12 @@ source $ZSH/oh-my-zsh.sh
  fi
 
 # Load aliases file
-if [ -f ~/.bash_aliases ]; then
-        . ~/.aliases
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
 fi
 
 export GOROOT=/usr/local/go
@@ -33,3 +51,6 @@ export PATH=$HOME/bin:$PATH
 
 PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
+
+export PATH="$PATH:$HOME/acs-engine/"
+export PATH=$HOME/bin:$PATH
