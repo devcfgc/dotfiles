@@ -55,6 +55,7 @@ alias kgn="kubectl get nodes"
 alias kgna="kubectl get namespaces"
 alias kgi="kubectl get ingress"
 ### KUBECTL - CONFIGURATION
+alias kgc='kubectl config get-contexts'
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context "$(kubectl config current-context)"'
 alias kcscn='kcsc --namespace'
