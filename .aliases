@@ -54,7 +54,6 @@ alias kgr="kubectl get replicasets"
 alias kgn="kubectl get nodes"
 alias kgna="kubectl get namespaces"
 alias kgi="kubectl get ingress"
-alias kgall='kubectl get ingress,service,deployment,pod'
 ### KUBECTL - CONFIGURATION
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context "$(kubectl config current-context)"'
