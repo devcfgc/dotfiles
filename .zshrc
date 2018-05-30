@@ -42,15 +42,24 @@ if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-export PATH="$PATH:$HOME/packer/"
-export PATH=$HOME/bin:$PATH
-
+######## ADDITIONS TO PATH ########
+# https://github.com/rvm/rvm
 PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 
+# https://github.com/Azure/acs-engine
 export PATH="$PATH:$HOME/acs-engine/"
 export PATH=$HOME/bin:$PATH
+
+# https://github.com/hashicorp/packer
+export PATH="$PATH:$HOME/packer/"
+export PATH=$HOME/bin:$PATH
+
+# https://github.com/spinnaker/roer
+export PATH="$PATH:$HOME/roer/"
+export PATH=$HOME/bin:$PATH
+
+# https://github.com/golang/go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
