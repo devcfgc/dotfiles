@@ -15,10 +15,18 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias _="sudo"
+alias g="git"
+alias rr="rm -rf"
 
 # PATHS
-alias cdco="cd $HOME/Documents/code"
-alias cdpu="cd $HOME/Documents/code/puppet"
+alias cdco="cd ~/Documents/code"
+alias cdpu="cd ~/Documents/code/puppet"
+alias cddl="cd ~/Downloads"
+alias cddt="cd ~/Desktop"
 
 # IDE
 alias coi='code-insiders .'
