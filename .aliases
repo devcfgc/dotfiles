@@ -1,11 +1,11 @@
 alias ealias='vim ~/.oh-my-zsh/custom/aliases.zsh'
 
-# Source Reload
+########## Source Reload ##########
 alias reload.zsh="source ~/.zshrc"
 alias reload.profile="source ~/.bash_profile"
 alias reload.term="source ~/.bash_profile && source ~/.zshrc"
 
-# enable color support of ls and also add handy aliases
+########## enable color support of ls and also add handy aliases ##########
 if [ -x /usr/bin/dircolors ]; then
         test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
         alias ls='ls --color=auto'
@@ -25,7 +25,7 @@ alias ....="cd ../../.."
 alias _="sudo"
 alias rr="rm -rf"
 
-# GIT
+########## GIT ##########
 alias g="git"
 alias gaa="git add --all"
 alias gcm="git commit -m"
@@ -41,20 +41,20 @@ alias gps="git push"
 alias gpsfo="git pull -f origin"
 alias gst="git status"
 
-# PATHS
+########## PATHS ##########
 alias cdco="cd ~/code"
 alias cddl="cd ~/Downloads"
 alias cddt="cd ~/Desktop"
 
-# IDE
+########## IDE ##########
 alias coi='code-insiders .'
 
-# VAGRANT
+########## VAGRANT ##########
 alias vu='vagrant up'
 alias vs='vagrant ssh'
 alias vd='vagrant destroy -f'
 
-# DOCKER
+########## DOCKER ##########
 alias dimg="docker images --all"
 alias diaq="docker images -a -q"
 alias dri="docker rmi"
@@ -65,8 +65,10 @@ alias di="docker inspect"
 alias drc="docker rm"
 alias dst="docker stop"
 
-# KUBERNETES
-## MINIKUBE
+##########    K8S   ##########
+########## MINIKUBE ##########
+alias mkdockeron='eval $(minikube docker-env)'
+alias mkdockeroff='eval $(minikube docker-env -u)'
 alias mk="minikube"
 alias mksv="minikube start --vm-driver=virtualbox"
 alias mksvcr="minikube start --vm-driver=virtualbox --container-runtime=cri-o"
@@ -81,7 +83,7 @@ alias mkda="minikube dashboard"
 alias mksvc="minikube service"
 alias mksvcl="minikube service list"
 
-## KUBECTL
+########## KUBECTL ##########
 alias k="kubectl"
 alias kc="kubectl create"
 alias kd="kubectl describe"
@@ -105,17 +107,19 @@ alias kdsvc="kubectl delete service"
 alias kddply="kubectl delete deployment"
 alias kdp="kubectl delete pods"
 
-### KUBECTL - CONFIGURATION
+########## KUBECTL - CONFIGURATION ##########
+alias kci='kubectl cluster-info'
 alias kgc='kubectl config get-contexts'
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context "$(kubectl config current-context)"'
 alias kcscn='kcsc --namespace'
+alias kcv='kubectl config view'
 
-### KUBECTL - NETWORKING
+########## KUBECTL - NETWORKING ##########
 alias kpf='kubectl port-forward'
 alias kp='kubectl proxy'
 
-### MICROK8S
+########## MICROK8S ##########
 alias mk8sinfo='microk8s.kubectl cluster-info'
 alias mk8ssta='microk8s.start'
 alias mk8sinitial='microk8s.enable dashboard registry dns storage'
