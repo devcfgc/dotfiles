@@ -1,3 +1,10 @@
+alias ealias='vim ~/.oh-my-zsh/custom/aliases.zsh'
+
+# Source Reload
+alias reload.zsh="source ~/.zshrc"
+alias reload.profile="source ~/.bash_profile"
+alias reload.term="source ~/.bash_profile && source ~/.zshrc"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
         test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -9,9 +16,6 @@ if [ -x /usr/bin/dircolors ]; then
         alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -19,12 +23,26 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias _="sudo"
-alias g="git"
 alias rr="rm -rf"
 
+# GIT
+alias g="git"
+alias gaa="git add --all"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
+alias gd="git diff"
+alias gf="git fetch"
+alias gfa="git fetch --all --prune"
+alias gfo="git fetch origin"
+alias gpl="git pull"
+alias gplo="git pull origin"
+alias gpso="git push origin"
+alias gps="git push"
+alias gpsfo="git pull -f origin"
+alias gst="git status"
+
 # PATHS
-alias cdco="cd ~/Documents/code"
-alias cdpu="cd ~/Documents/code/puppet"
+alias cdco="cd ~/code"
 alias cddl="cd ~/Downloads"
 alias cddt="cd ~/Desktop"
 
@@ -37,36 +55,75 @@ alias vs='vagrant ssh'
 alias vd='vagrant destroy -f'
 
 # DOCKER
+alias dimg="docker images --all"
+alias diaq="docker images -a -q"
+alias dri="docker rmi"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
+alias dpsaq="docker ps -a -q"
 alias di="docker inspect"
+alias drc="docker rm"
+alias dst="docker stop"
 
 # KUBERNETES
 ## MINIKUBE
+alias mk="minikube"
 alias mksv="minikube start --vm-driver=virtualbox"
 alias mksvcr="minikube start --vm-driver=virtualbox --container-runtime=cri-o"
 alias mks="minikube start"
+alias mks4="minikube start --memory='4000MB'"
+alias mks8="minikube start --memory='8192MB'"
 alias mksto="minikube stop"
 alias mkst="minikube status"
 alias mkssh="minikube ssh"
 alias mkde="minikube delete"
 alias mkda="minikube dashboard"
+alias mksvc="minikube service"
+alias mksvcl="minikube service list"
 
 ## KUBECTL
 alias k="kubectl"
+alias kc="kubectl create"
+alias kd="kubectl describe"
+alias kg="kubectl get"
+alias keit="kubectl exec -it"
 alias kga="kubectl get all"
 alias kgp="kubectl get pods"
+alias kgpsl="kubectl get pods --show-labels"
 alias kgd="kubectl get deployments"
-alias kgs="kubectl get services"
-alias kgr="kubectl get replicasets"
 alias kgn="kubectl get nodes"
 alias kgna="kubectl get namespaces"
 alias kgi="kubectl get ingress"
+alias kgrs="kubectl get rs"
+alias kgr="kubectl get replicasets"
+alias kgsec="kubectl get secret"
+alias kgsvc="kubectl get services"
+alias kgpvc="kubectl get PersistentVolumeClaim"
+alias kgpv="kubectl get PersistentVolume"
+alias kl="kubectl logs"
+alias kdsvc="kubectl delete service"
+alias kddply="kubectl delete deployment"
+alias kdp="kubectl delete pods"
+
 ### KUBECTL - CONFIGURATION
 alias kgc='kubectl config get-contexts'
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context "$(kubectl config current-context)"'
 alias kcscn='kcsc --namespace'
+
 ### KUBECTL - NETWORKING
-alias kpf='kubectl port-forward '
+alias kpf='kubectl port-forward'
 alias kp='kubectl proxy'
+
+### MICROK8S
+alias mk8sinfo='microk8s.kubectl cluster-info'
+alias mk8ssta='microk8s.start'
+alias mk8sinitial='microk8s.enable dashboard registry dns storage'
+alias mk8sstatus='microk8s.status'
+alias mk8ssto='microk8s.stop'
+alias mk8sre='microk8s.reset'
+alias mk8skube='microk8s.kubectl'
+alias mk8sda='microk8s.kubectl get all --all-namespaces | grep service/kubernetes-dashboard'
+alias mk8sdasecret='microk8s.kubectl -n kube-system get secret'
+alias mk8sdatoken='microk8s.kubectl -n kube-system describe secret '
+alias mk8sdatoken='microk8s.kubectl -n kube-system describe secret '
