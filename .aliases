@@ -85,6 +85,7 @@ alias mksvcl="minikube service list"
 
 ########## KUBECTL ##########
 alias k="kubectl"
+alias kn='kubectl config set-context --current --namespace ' # set the default namespace of your current context
 alias kc="kubectl create"
 alias kd="kubectl describe"
 alias kg="kubectl get"
