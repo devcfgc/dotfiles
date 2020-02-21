@@ -19,11 +19,16 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias _="sudo"
+alias rr="rm -rf"
+
+########## PATHS ##########
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias _="sudo"
-alias rr="rm -rf"
+alias cdco="cd ~/code"
+alias cddl="cd ~/Downloads"
+alias cddt="cd ~/Desktop"
 
 ########## GIT ##########
 alias g="git"
@@ -40,11 +45,6 @@ alias gpso="git push origin"
 alias gps="git push"
 alias gpsfo="git pull -f origin"
 alias gst="git status"
-
-########## PATHS ##########
-alias cdco="cd ~/code"
-alias cddl="cd ~/Downloads"
-alias cddt="cd ~/Desktop"
 
 ########## IDE ##########
 alias coi='code-insiders .'
@@ -75,6 +75,8 @@ alias mksvcr="minikube start --vm-driver=virtualbox --container-runtime=cri-o"
 alias mks="minikube start"
 alias mks4="minikube start --memory='4000MB'"
 alias mks8="minikube start --memory='8192MB'"
+alias mks16="minikube start --memory='16384MB'"
+alias mks8c4="minikube start --memory='8192MB' --cpus='4'"
 alias mksto="minikube stop"
 alias mkst="minikube status"
 alias mkssh="minikube ssh"
@@ -85,7 +87,6 @@ alias mksvcl="minikube service list"
 
 ########## KUBECTL ##########
 alias k="kubectl"
-alias kn='kubectl config set-context --current --namespace ' # set the default namespace of your current context
 alias kc="kubectl create"
 alias kd="kubectl describe"
 alias kg="kubectl get"
@@ -120,15 +121,14 @@ alias kcv='kubectl config view'
 alias kpf='kubectl port-forward'
 alias kp='kubectl proxy'
 
-########## MICROK8S ##########
-alias mk8sinfo='microk8s.kubectl cluster-info'
-alias mk8ssta='microk8s.start'
-alias mk8sinitial='microk8s.enable dashboard registry dns storage'
-alias mk8sstatus='microk8s.status'
-alias mk8ssto='microk8s.stop'
-alias mk8sre='microk8s.reset'
-alias mk8skube='microk8s.kubectl'
-alias mk8sda='microk8s.kubectl get all --all-namespaces | grep service/kubernetes-dashboard'
-alias mk8sdasecret='microk8s.kubectl -n kube-system get secret'
-alias mk8sdatoken='microk8s.kubectl -n kube-system describe secret '
-alias mk8sdatoken='microk8s.kubectl -n kube-system describe secret '
+################ KUBECTX #################
+alias kcci='kubectx ci-k8s'
+alias kcin='kubectx intg-k8s'
+alias kcua='kubectx uat-k8s'
+alias kcmk='kubectx minikube'v
+
+################# TMUX ##################
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
