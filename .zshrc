@@ -35,5 +35,8 @@ PROMPT=$PROMPT'$(kube_ps1) '
    export EDITOR='mvim'
  fi
 
-# # https://github.com/kubernetes-sigs/krew
-# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# https://github.com/kubernetes-sigs/krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+source $(dirname $(gem which colorls))/tab_complete.sh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
