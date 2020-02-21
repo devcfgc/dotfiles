@@ -9,5 +9,5 @@ echo "## AND DOWNLOAD ZSH PLUGINS ##"
 cd $HOME/.oh-my-zsh/plugins \
     && git clone https://github.com/gretzky/auto-color-ls \
     && git clone https://github.com/johanhaleby/kubetail.git kubetail \
-    && gem install colorls \
+    && sudo gem install -n /usr/local/bin colorls \
     && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
