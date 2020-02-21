@@ -109,6 +109,10 @@ alias kdsvc="kubectl delete service"
 alias kddply="kubectl delete deployment"
 alias kdp="kubectl delete pods"
 
+########## KUBECTL - PLUGINS ##########
+alias kctx="kubectl ctx"
+alias kns="kubectl ns"
+
 ########## KUBECTL - CONFIGURATION ##########
 alias kci='kubectl cluster-info'
 alias kgc='kubectl config get-contexts'
