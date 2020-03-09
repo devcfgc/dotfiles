@@ -51,6 +51,7 @@ alias coi='code-insiders .'
 
 ########## VAGRANT ##########
 alias vu='vagrant up'
+alias vh='vagrant halt'
 alias vs='vagrant ssh'
 alias vd='vagrant destroy -f'
 
