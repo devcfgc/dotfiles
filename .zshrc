@@ -20,6 +20,7 @@ plugins=(
   sudo
   vagrant
   zsh-syntax-highlighting
+  helm
 )
 
 source $ZSH/oh-my-zsh.sh
