@@ -9,18 +9,22 @@ ZSH_THEME="agnoster"
 plugins=(
   auto-color-ls
   docker
+  dotenv
   git
   git-extras
   golang
+  gradle
+  helm
   kubectl
   kubetail
   kube-ps1
+  minikube
   ruby
   rvm
   sudo
+  tmux
   vagrant
   zsh-syntax-highlighting
-  helm
 )
 
 source $ZSH/oh-my-zsh.sh
